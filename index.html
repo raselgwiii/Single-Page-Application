@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>WS1.1</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="ws1.1style.css">
+</head>
+
+<body>
+  </header>
+
+  <div class="headers">
+    <div class="logo">
+        <img src="img/ispsc_logo.png">
+       
+    </div> 
+    <div class="headers-text">REPUBLIC OF THE PHILIPPINES<hr>
+        <h4>ILOCOS SUR POLYTECHNIC STATE COLLEGE </h4>TAGUDIN CAMPUS | TAGUDIN, ILOCOS SUR
+    </div>
+</div>
+
+
+
+<nav >
+  <ul>
+    <li><a href="index.html">WORKSHEET 1.1</a></li>
+    <li><a href="ws1.3.php">WORKSHEET 1.3</a></li>
+    <li><a href="ws1.4.php">WORKSHEET 1.4</a></li>
+    <li><a href="ws1.5.php">WORKSHEET 1.5</a></li>
+  </ul>
+</nav>
+
+  <div class="carousel">
+    <ul class="slides">
+      <input type="radio" name="radio-buttons" id="img-1" checked />
+      <li class="slide-container">
+        <div class="slide-image">
+          <img src="img/wc.jpg">
+        </div>
+        <div class="carousel-controls">
+          <label for="img-3" class="prev-slide">
+            <span>&lsaquo;</span>
+          </label>
+          <label for="img-2" class="next-slide">
+            <span>&rsaquo;</span>
+          </label>
+        </div>
+      </li>
+      <input type="radio" name="radio-buttons" id="img-2" />
+      <li class="slide-container">
+        <div class="slide-image">
+          <img src="img/slide2.png">
+        </div>
+        <div class="carousel-controls">
+          <label for="img-1" class="prev-slide">
+            <span>&lsaquo;</span>
+          </label>
+          <label for="img-3" class="next-slide">
+            <span>&rsaquo;</span>
+          </label>
+        </div>
+      </li>
+      <input type="radio" name="radio-buttons" id="img-3" />
+      <li class="slide-container">
+        <div class="slide-image">
+          <img src="img/slide3.png">
+        </div>
+        <div class="carousel-controls">
+          <label for="img-2" class="prev-slide">
+            <span>&lsaquo;</span>
+          </label>
+          <label for="img-1" class="next-slide">
+            <span>&rsaquo;</span>
+          </label>
+        </div>
+      </li>
+    </ul>
+  </div>
+    
+      <div class="carousel-dots">
+        <label for="img-1" class="carousel-dot" id="img-dot-1"></label>
+        <label for="img-2" class="carousel-dot" id="img-dot-2"></label>
+        <label for="img-3" class="carousel-dot" id="img-dot-3"></label>
+      </div>
+    </ul>
+  </div>
+
+
+  <div class="containers">
+        <div class="hero-banner">
+          <h3>Welcome to Ilocos Sur Polytechnic State College</h3>
+          <div class="useful-links">
+            <h2>Useful Links</h2>
+            <a href="#">School Library</a> |
+            <a href="#">Google Classroom</a> |
+            <a href="#">Student Portal</a>
+        </div>
+
+        <div class="useful-links">
+        <h2>Departments</h2>  
+        </div>
+          <div class="departments-container">
+            
+            <div class="department-card">
+                <h2 class="department-title">CTE</h2>
+                <p class="department-description">College of Teacher Education</p>
+            </div>
+            <div class="department-card">
+                <h2 class="department-title">CBME</h2>
+                <p class="department-description">The College of Business and Management Education</p>
+            </div>
+            <div class="department-card">
+                <h2 class="department-title">CAS</h2>
+                <p class="department-description">The College of Arts and Sciences</p>
+            </div>
+        </div>
+        </div>
+  </div>
+
+  <footer class="footers">
+    &copy; 2024 Ilocos Sur Polytechnic State College.
+</footer>
+
+<script>
+let currentSlide = 1;
+    const totalSlides = document.querySelectorAll('input[name="radio-buttons"]').length;
+
+    function showSlide(slideNumber) {
+    document.querySelector(`#img-${slideNumber}`).checked = true;
+    }
+
+    function nextSlide() {
+    currentSlide = (currentSlide % totalSlides) + 1;
+    showSlide(currentSlide);
+    }
+
+    setInterval(nextSlide, 3000);
+
+    document.addEventListener('click', function (event) {
+        const submenu = document.querySelector('.subclass');
+        const navlink = document.querySelector('.navlink');
+    
+        if (!navlink.contains(event.target)) {
+            submenu.style.display = 'none';
+        }
+    });
+    
+    const navlink = document.querySelector('.navlink');
+    const submenu = document.querySelector('.subclass');
+    
+    navlink.addEventListener('click', function (event) {
+        event.preventDefault();
+        submenu.style.display = submenu.style.display === 'block' ? 'none' : 'block';
+        event.stopPropagation(); 
+    });
+</script>
+
+</body>
+
+</html>
